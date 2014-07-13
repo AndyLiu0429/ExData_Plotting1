@@ -1,0 +1,9 @@
+help
+raw <- read.table('household_power_consumption.txt',sep=';',header=T, na.strings = '?')#
+raw$datetime <- strptime(paste(raw$Date, raw$Time), format='%d/%m/%Y %H:%M:%S')#
+part <- subset(raw, as.Date(datetime) == '2007-02-01' | as.Date(datetime) == '2007-02-02')
+getwd()
+setwd('./ExData_Plotting1/')
+raw <- read.table('household_power_consumption.txt',sep=';',header=T, na.strings = '?')#
+raw$datetime <- strptime(paste(raw$Date, raw$Time), format='%d/%m/%Y %H:%M:%S')#
+part <- subset(raw, as.Date(datetime) == '2007-02-01' | as.Date(datetime) == '2007-02-02')
